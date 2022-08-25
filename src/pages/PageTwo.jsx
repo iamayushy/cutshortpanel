@@ -1,8 +1,10 @@
 import { Input } from "@mantine/core"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { FormPage } from "../components/FormPage"
 
 const PageTwo = () => {
+    const nav = useNavigate()
     const [workspaceState, setWorkSpaceState] = useState({
         wname: '',
         wurl: ''
@@ -10,6 +12,7 @@ const PageTwo = () => {
     const nextPage = (e) => {
         e.preventDefault()
         console.log(workspaceState)
+        nav('/workspace-plan')
 
     }
     return(
@@ -29,8 +32,8 @@ const PageTwo = () => {
         valOne={workspaceState.wname}
         moveNext={nextPage}
         >
-        <br />
         <p  className='label-text'>Workspace URL (optional)</p>
+
         <Input
         className="custom-ip"
         size={'md'}
