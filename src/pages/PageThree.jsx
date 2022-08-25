@@ -2,8 +2,10 @@ import { CustomBox } from "../components/CustomBox";
 import { HiUser, HiUserGroup } from "react-icons/hi";
 import { CommonButton } from "../components/CommonButton";
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PageThree = () => {
+  const nav = useNavigate()
 
   const [manageSelect, setManageSelect] = useState({
     optionOne: false,
@@ -25,6 +27,15 @@ const PageThree = () => {
       optionTwo: true,
     });
   };
+
+  const nextPage = () => {
+    if(manageSelect.optionOne === true || manageSelect.optionTwo === true){
+        nav('/complete')
+    }
+    else{
+        alert('select atleast one option please')
+    }
+  }
   return (
     <div className="pageOne">
       <section className="welcome-text">
@@ -40,7 +51,7 @@ const PageThree = () => {
           color={manageSelect.optionOne ? "#664de5" : "rgb(213, 213, 213)"}
           handleColor={handleColorOne}
         >
-          <HiUser size={30} />
+          <HiUser color={manageSelect.optionOne ? '#664de5': 'black'} size={30} />
         </CustomBox>
 
         <CustomBox
@@ -50,10 +61,10 @@ const PageThree = () => {
           color={manageSelect.optionTwo ? "#664de5" : "rgb(213, 213, 213)"}
           handleColor={handleColorTwo}
         >
-          <HiUserGroup size={30} />
+          <HiUserGroup color={manageSelect.optionTwo ? '#664de5': 'black'} size={30} />
         </CustomBox>
       </section>
-      <CommonButton value={"Create Workspace"} />
+      <CommonButton moveToNextPage={nextPage} value={"Create Workspace"} />
     </div>
   );
 };

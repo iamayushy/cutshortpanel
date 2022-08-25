@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { PageFour } from './pages/PageFour'
 
 import { PageOne } from './pages/PageOne'
 import { PageThree } from './pages/PageThree'
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<PageOne/>}/>
         <Route path='/workspace-details' element={<PageTwo/>}/>
         <Route path='/workspace-plan' element={<PageThree/>}/>
+        <Route path='/complete' element={<PageFour/>}/>
       </Routes>
       {/* <ErrorComp errorName={'Name is No'}/> */}
       {/* <PageOne/>
