@@ -16,9 +16,9 @@ const PageOne = () => {
   }
 
 
-  const getPage = async(e) => {
+  const getPage = (e) => {
     e.preventDefault();
-    const checkInpu = await checkInput()
+    const checkInpu =  checkInput()
     checkInpu ? nav("/workspace-details") : alert('number of charcter to each box must be 6')
 
   };
