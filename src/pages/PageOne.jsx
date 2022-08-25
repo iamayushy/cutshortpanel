@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormPage } from "../components/FormPage";
+import { userContext } from "../context/UserContext";
 
 const PageOne = () => {
   const nav = useNavigate();
@@ -8,10 +9,11 @@ const PageOne = () => {
     fullName: "",
     displayName: "",
   });
+  const {completeDetails, setCompleteDetails} = useContext(userContext)
 
   const checkInput = () => {
     let isValidated = false
-    isValidated = details.fullName.length > 5 && details.displayName.length > 3 ? true:false
+    isValidated = completeDetails.fullName.length > 5 && completeDetails.displayName.length > 3 ? true:false
     return isValidated
   }
 
@@ -34,19 +36,19 @@ const PageOne = () => {
         placeholderOne={"Steve Jobs"}
         placeholderTwo={"Steve"}
         handleInputOne={(e) =>
-          setDetails({
-            ...details,
+          setCompleteDetails({
+            ...completeDetails,
             fullName: e.target.value,
           })
         }
         handleInputTwo={(e) =>
-          setDetails({
-            ...details,
+          setCompleteDetails({
+            ...completeDetails,
             displayName: e.target.value,
           })
         }
-        valOne={details.fullName}
-        valTwo={details.displayName}
+        valOne={completeDetails.fullName}
+        valTwo={completeDetails.displayName}
         moveNext={getPage}
       />
     </>

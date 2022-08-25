@@ -1,17 +1,16 @@
 import { Input } from "@mantine/core"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { FormPage } from "../components/FormPage"
+import { userContext } from "../context/UserContext"
 
 const PageTwo = () => {
     const nav = useNavigate()
-    const [workspaceState, setWorkSpaceState] = useState({
-        wname: '',
-        wurl: ''
-    })
+    const {completeDetails, setCompleteDetails} = useContext(userContext)
+
     const nextPage = (e) => {
         e.preventDefault()
-        console.log(workspaceState)
+        console.log(completeDetails)
         nav('/workspace-plan')
 
     }
@@ -24,12 +23,12 @@ const PageTwo = () => {
         textOne={'Workspace Name'}
         textTwo={`Workspace URL`}
         handleInputOne={(e) => {
-            setWorkSpaceState({
-                ...workspaceState,
-                wname: e.target.value
+            setCompleteDetails({
+                ...completeDetails,
+                workspaceName: e.target.value
             })
         }}
-        valOne={workspaceState.wname}
+        valOne={completeDetails.workspaceName}
         moveNext={nextPage}
         >
         <p  className='label-text'>Workspace URL (optional)</p>
@@ -42,12 +41,12 @@ const PageTwo = () => {
         iconWidth={150}
         color='red'
         onChange={(e) => {
-            setWorkSpaceState({
-                ...workspaceState,
-                wurl:e.target.value
+            setCompleteDetails({
+                ...completeDetails,
+                workspaceUrl:e.target.value
             })
         }}
-        value={workspaceState.wurl}
+        value={completeDetails.workspaceUrl}
 
         />
         </FormPage>
