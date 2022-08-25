@@ -58,3 +58,20 @@ input[type="text"]:focus {
     outline: #664de5;
     border: 2px solid #664de5;
 }
+.box{
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 5px;
+    width: 11.3rem;
+
+}
+.option-plan{
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}
+.option-plan > *{
+    padding: 1rem 0.8rem;
+}
+.box-body{
+    color: #7b7b7b;
+}

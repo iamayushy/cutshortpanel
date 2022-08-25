@@ -31,16 +31,14 @@ const FormPage = ({
             placeholder={placeholderOne}
             handleInput={handleInputOne}
             values={valOne}
-            // optional={optOne}
           />
+          <br />
           {show &&
           <InputBox
             inputName={textTwo}
             placeholder={placeholderTwo}
             handleInput={handleInputTwo}
             values={valTwo}
-            optional={optTwo}
-            web={website}
           />}
           {children}
           <CommonButton moveToNextPage={moveNext} value={"Create Workspace"} />
