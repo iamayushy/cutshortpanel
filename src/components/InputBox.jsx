@@ -1,8 +1,8 @@
-const InputBox = ({inputName, placeholder}) => {
+const InputBox = ({inputName, placeholder, handleInput, values}) => {
     return(
         <div>
             <p className="label-text">{inputName}</p>
-            <input type="text" placeholder={placeholder}/>
+            <input onChange={handleInput} value={values} type="text" placeholder={placeholder}/>
         </div>
     )
 }
