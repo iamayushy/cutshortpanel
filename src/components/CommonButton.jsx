@@ -1,8 +1,5 @@
-const CommonButton = ({value}) => {
-    function getSomeResp(e){
-        e.preventDefault()
+const CommonButton = ({value, moveToNextPage}) => {
     
-    }
-    return <button onClick={getSomeResp}>{value}</button>
+    return <button onClick={moveToNextPage}>{value}</button>
 }
 export {CommonButton}
