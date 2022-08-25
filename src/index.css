@@ -5,7 +5,7 @@
 }
 button {
   background-color: #664de5;
-  width: 29.56vw;
+  width: 30rem;
   padding: 0.9rem 0.8rem;
   border: none;
   color: white;
@@ -17,10 +17,11 @@ button:active {
   transform: translateY(2%);
 }
 input[type="text"] {
+  /* position: relative; */
   padding: 0.6rem 0.4rem;
   font-size: 1rem;
-  width: 28vw;
-  border: 2px solid whitesmoke;
+  width: 29rem;
+  border: 2px solid rgb(213, 213, 213);
   border-radius: 5px;
 }
 input[type="text"]:focus {
@@ -28,9 +29,10 @@ input[type="text"]:focus {
   border: 2px solid #664de5;
 }
 .pageOne {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
+  /* position: relative; */
+
 }
 .welcome-text {
   text-align: center;
@@ -46,16 +48,5 @@ input[type="text"]:focus {
 .label-text {
   font-weight: 600;
   color: #7b7b7b;
-}
-.er-box {
-  /* border: 1px solid black; */
-  display: none;
-  font-size: 1.2rem;
-  width: 250px;
-  padding: 0.4rem 1rem;
-  border-radius: 5px;
-  background-color: red;
-  position: absolute;
-  right: 2%;
-  top: 2%;
+  position: relative;
 }
