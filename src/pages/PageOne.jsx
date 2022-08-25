@@ -28,6 +28,7 @@ const PageOne = () => {
       <FormPage
         head={"Welcome! First thing first"}
         body={"You can always change them later"}
+        show={true}
         textOne={"Full Name"}
         textTwo={"Display Name"}
         placeholderOne={"Steve Jobs"}

@@ -50,3 +50,11 @@ input[type="text"]:focus {
   color: #7b7b7b;
   position: relative;
 }
+.custom-ip{
+    border: 2px solid rgb(213, 213, 213);
+    border-radius: 5px;
+}
+.custom-ip:hover{
+    outline: #664de5;
+    border: 2px solid #664de5;
+}

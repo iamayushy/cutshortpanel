@@ -14,7 +14,9 @@ const FormPage = ({
   valOne,
   valTwo,
   optTwo,
-  website
+  website,
+  children,
+  show = false
 }) => {
   return (
     <div >
@@ -31,6 +33,7 @@ const FormPage = ({
             values={valOne}
             // optional={optOne}
           />
+          {show &&
           <InputBox
             inputName={textTwo}
             placeholder={placeholderTwo}
@@ -38,7 +41,8 @@ const FormPage = ({
             values={valTwo}
             optional={optTwo}
             web={website}
-          />
+          />}
+          {children}
           <CommonButton moveToNextPage={moveNext} value={"Create Workspace"} />
         </form>
       </section>
