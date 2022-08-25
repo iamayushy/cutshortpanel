@@ -1,12 +1,13 @@
 import { CustomBox } from "../components/CustomBox";
 import { HiUser, HiUserGroup } from "react-icons/hi";
 import { CommonButton } from "../components/CommonButton";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../context/UserContext";
 
 const PageThree = () => {
   const nav = useNavigate()
-
+  const {completeDetails, setCompleteDetails} = useContext(userContext)
   const [manageSelect, setManageSelect] = useState({
     optionOne: false,
     optionTwo: false,
@@ -30,6 +31,11 @@ const PageThree = () => {
 
   const nextPage = () => {
     if(manageSelect.optionOne === true || manageSelect.optionTwo === true){
+        setCompleteDetails({
+            ...completeDetails,
+            edenType: manageSelect.optionOne ? 'single':'team'
+
+        })
         nav('/complete')
     }
     else{

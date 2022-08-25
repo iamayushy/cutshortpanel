@@ -20,4 +20,4 @@ const HandleContext = ({children}) => {
         </userContext.Provider>
     )
 }
-export {HandleContext}
+export {HandleContext, userContext}
