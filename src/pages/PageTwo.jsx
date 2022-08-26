@@ -1,12 +1,27 @@
 import { Input } from "@mantine/core"
-import { useState, useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useContext, useEffect } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import { FormPage } from "../components/FormPage"
 import { userContext } from "../context/UserContext"
 
 const PageTwo = () => {
     const nav = useNavigate()
-    const {completeDetails, setCompleteDetails} = useContext(userContext)
+    const {completeDetails, setCompleteDetails, setPageCount, pageCount} = useContext(userContext)
+    const location = useLocation()
+
+    useEffect(() => {
+        if(completeDetails.fullName.length <= 5 || completeDetails.displayName.length <= 4){
+            nav('/')
+        }
+        else{
+            if(location.pathname === '/workspace-details'){
+            setPageCount({
+                ...pageCount,
+                one: true
+            })
+        }
+        }
+    }, [])
 
     const nextPage = (e) => {
         e.preventDefault()

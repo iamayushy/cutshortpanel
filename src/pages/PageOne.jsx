@@ -5,10 +5,11 @@ import { userContext } from "../context/UserContext";
 
 const PageOne = () => {
   const nav = useNavigate();
-  const [details, setDetails] = useState({
-    fullName: "",
-    displayName: "",
-  });
+  // const [details, setDetails] = useState({
+  //   fullName: "",
+  //   displayName: "",
+  // });
+
   const {completeDetails, setCompleteDetails} = useContext(userContext)
 
   const checkInput = () => {

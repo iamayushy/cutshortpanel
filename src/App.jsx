@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { StatusPage } from './components/StatusPage'
 import { PageFour } from './pages/PageFour'
 
 import { PageOne } from './pages/PageOne'
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <StatusPage/>
       <Routes>
         <Route path='/' element={<PageOne/>}/>
         <Route path='/workspace-details' element={<PageTwo/>}/>
