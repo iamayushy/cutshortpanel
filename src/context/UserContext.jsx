@@ -12,12 +12,7 @@ const HandleContext = ({children}) => {
         edenType: ''
     })
 
-    const [pageCount, setPageCount] = useState({
-        one: false,
-        two: false,
-        three: false,
-        four: false
-    })
+    const [pageCount, setPageCount] = useState(1)
     return(
         <userContext.Provider value={{
             completeDetails,

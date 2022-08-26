@@ -14,12 +14,10 @@ const PageTwo = () => {
             nav('/')
         }
         else{
-            if(location.pathname === '/workspace-details'){
-            setPageCount({
-                ...pageCount,
-                one: true
-            })
-        }
+
+        setPageCount(2)
+
+
         }
     }, [])
 

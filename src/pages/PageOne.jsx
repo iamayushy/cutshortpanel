@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormPage } from "../components/FormPage";
 import { userContext } from "../context/UserContext";
@@ -10,8 +10,12 @@ const PageOne = () => {
   //   displayName: "",
   // });
 
-  const {completeDetails, setCompleteDetails} = useContext(userContext)
+  const {completeDetails, setCompleteDetails, setPageCount} = useContext(userContext)
 
+
+  useEffect(() => {
+    setPageCount(1)
+  }, [])
   const checkInput = () => {
     let isValidated = false
     isValidated = completeDetails.fullName.length > 5 && completeDetails.displayName.length > 3 ? true:false

@@ -19,7 +19,7 @@ const FormPage = ({
   show = false
 }) => {
   return (
-    <div >
+    <div className="formPage" >
       <section className="pageOne">
         <section className="welcome-text">
           <h1>{head}</h1>
