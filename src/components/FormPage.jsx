@@ -13,8 +13,6 @@ const FormPage = ({
   handleInputTwo,
   valOne,
   valTwo,
-  optTwo,
-  website,
   children,
   show = false
 }) => {

@@ -5,33 +5,31 @@ import { userContext } from "../context/UserContext";
 
 const PageOne = () => {
   const nav = useNavigate();
-  // const [details, setDetails] = useState({
-  //   fullName: "",
-  //   displayName: "",
-  // });
-
-  const {completeDetails, setCompleteDetails, setPageCount} = useContext(userContext)
-
+  const { completeDetails, setCompleteDetails, setPageCount } =
+    useContext(userContext);
 
   useEffect(() => {
-    setPageCount(1)
-  }, [])
+    setPageCount(1);
+  }, []);
   const checkInput = () => {
-    let isValidated = false
-    isValidated = completeDetails.fullName.length > 5 && completeDetails.displayName.length > 3 ? true:false
-    return isValidated
-  }
-
+    let isValidated = false;
+    isValidated =
+      completeDetails.fullName.length > 5 &&
+      completeDetails.displayName.length > 3
+        ? true
+        : false;
+    return isValidated;
+  };
 
   const getPage = (e) => {
     e.preventDefault();
-    const checkInpu =  checkInput()
-    checkInpu ? nav("/workspace-details") : alert('number of charcter to each box must be 6')
-
+    const checkInpu = checkInput();
+    checkInpu
+      ? nav("/workspace-details")
+      : alert("number of charcter to each box must be 6");
   };
   return (
     <>
-
       <FormPage
         head={"Welcome! First thing first"}
         body={"You can always change them later"}

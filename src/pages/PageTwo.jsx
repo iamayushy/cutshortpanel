@@ -1,5 +1,5 @@
 import { Input } from "@mantine/core"
-import { useState, useContext, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { FormPage } from "../components/FormPage"
 import { userContext } from "../context/UserContext"
@@ -44,6 +44,7 @@ const PageTwo = () => {
         valOne={completeDetails.workspaceName}
         moveNext={nextPage}
         >
+            
         <p  className='label-text'>Workspace URL (optional)</p>
 
         <Input
