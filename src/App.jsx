@@ -11,7 +11,9 @@ function App() {
 
   return (
     <div className="App">
+      <section className='statusIndicator'>
       <StatusPage/>
+      </section>
       <Routes>
         <Route path='/' element={<PageOne/>}/>
         <Route path='/workspace-details' element={<PageTwo/>}/>

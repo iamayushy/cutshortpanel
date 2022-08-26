@@ -9,6 +9,10 @@ body{
   padding: 0;
 }
 
+.formPage{
+  width: 100%;
+  margin: 0 auto;
+}
 button {
   background-color: #664de5;
   width: 30rem;
@@ -42,7 +46,7 @@ input[type="text"]:focus {
 }
 .welcome-text {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .welcome-text h1 {
   font-size: 2rem;
@@ -73,6 +77,7 @@ input[type="text"]:focus {
 .option-plan{
     display: flex;
     gap: 3rem;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .option-plan > *{
@@ -82,7 +87,7 @@ input[type="text"]:focus {
     color: #7b7b7b;
 }
 .checked{
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 .statusIcon{
   width: 3rem;
@@ -100,45 +105,47 @@ input[type="text"]:focus {
   position: relative;
 }
 .statusIndicator{
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: -5rem; */
-
-}
-
-.init::before{
-  content: '';
-  position: absolute;
-  background: linear-gradient(90deg, #664de5 50%, whitesmoke 50%);
-  height: 1px;
-  width: 140%;
-  left: 100%;
-}
-.completed::before{
-  content: '';
-  position: absolute;
-  background: linear-gradient(90deg, #664de5 100%, whitesmoke 0%);
-  height: 1px;
-  width: 140%;
-  left: 100%;
-}
-.statusColor{
-  background-color: #664de5;
-  color: white;
-}
-.stepper{
-  position: relative;
-  height: 5rem;
-  padding: 2rem 0;
-
-}
-.child{
-  position: absolute;
-  /* margin-left: 4rem; */
+  width: 500px;
   margin: 0 auto;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  transform: translate(-50%, -50%);
+  position: relative;
+  left: 1.5%;
+
+}
+
+.completed{
+  position: relative;
+}
+.completed::after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  background-color:#664de5;
+  width: 80%;
+  left: 55%;
+}
+@media (max-width: 759px) {
+  input[type="text"] {
+    width: 22rem;
+  }
+  button{
+    width: 23rem;
+  }
+  .statusIndicator{
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+
+  }
+  .completed::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    background-color:#664de5;
+    width: 100%;
+    left: 65%;
+    z-index: -1;
+  }
+  .option-plan{
+    justify-content: center;
+  }
 }

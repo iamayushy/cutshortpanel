@@ -9,16 +9,16 @@ const PageThree = () => {
 
 
   const nav = useNavigate()
-  const {completeDetails, setCompleteDetails} = useContext(userContext)
+  const {completeDetails, setCompleteDetails, setPageCount} = useContext(userContext)
   const [manageSelect, setManageSelect] = useState({
     optionOne: false,
     optionTwo: false,
   });
 
   useEffect(() => {
-    if(completeDetails.workspaceName === ''){
-        nav('/workspace-details')
-      }
+    completeDetails.workspaceName === '' ? nav('/workspace-details') : setPageCount(3)
+
+
 }, [])
 
   const handleColorOne = () => {
