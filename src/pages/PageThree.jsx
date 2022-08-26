@@ -1,7 +1,7 @@
 import { CustomBox } from "../components/CustomBox";
 import { HiUser, HiUserGroup } from "react-icons/hi";
 import { CommonButton } from "../components/CommonButton";
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../context/UserContext";
 
