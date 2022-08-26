@@ -11,10 +11,19 @@ const HandleContext = ({children}) => {
         workspaceUrl: '',
         edenType: ''
     })
+
+    const [pageCount, setPageCount] = useState({
+        one: false,
+        two: false,
+        three: false,
+        four: false
+    })
     return(
         <userContext.Provider value={{
             completeDetails,
-            setCompleteDetails
+            setCompleteDetails,
+            pageCount,
+            setPageCount
         }}>
             {children}
         </userContext.Provider>
