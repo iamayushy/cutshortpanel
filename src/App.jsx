@@ -15,22 +15,24 @@ function App() {
 
   return (
     <div className="App">
+      {/* logo */}
       <section className='logo'>
-        <img src={eden} alt="sss" />
+        <img src={eden} alt="logo-image" />
         <h3>Eden</h3>
       </section>
+
+      {/* stepper  */}
       <section className='statusIndicator'>
       <StatusPage/>
       </section>
+
+      {/* routes  */}
       <Routes>
         <Route path='/' element={<PageOne/>}/>
         <Route path='/workspace-details' element={<PageTwo/>}/>
         <Route path='/workspace-plan' element={<PageThree/>}/>
         <Route path='/complete' element={<PageFour/>}/>
       </Routes>
-      {/* <ErrorComp errorName={'Name is No'}/> */}
-      {/* <PageOne/>
-      <PageTwo/> */}
     </div>
   )
 }
